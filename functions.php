@@ -53,57 +53,56 @@ function wpm_enqueue_styles(){
 
 function egp_custom_post_type() {
     $labels = array(
-        'name'                => __( 'Galerie', 'lsd_lang'),
-        'singular_name'       => __( 'Galerie', 'lsd_lang'),
-        'menu_name'           => __( 'Galerie', 'lsd_lang'),
-        'all_items'           => __( 'Tous les types de Galerie', 'lsd_lang'),
-        'view_item'           => __( 'Voir tous les types de Galerie', 'lsd_lang'),
-        'add_new_item'        => __( 'Ajouter une Galerie', 'lsd_lang'),
+        'name'                => __( 'Agenda', 'lsd_lang'),
+        'singular_name'       => __( 'Agenda', 'lsd_lang'),
+        'menu_name'           => __( 'Agenda', 'lsd_lang'),
+        'all_items'           => __( 'Tous les types de Agenda', 'lsd_lang'),
+        'view_item'           => __( 'Voir tous les types de Agenda', 'lsd_lang'),
+        'add_new_item'        => __( 'Ajouter une Agenda', 'lsd_lang'),
         'add_new'             => __( 'Ajouter', 'lsd_lang'),
-        'edit_item'           => __( 'Editer un type la Galerie', 'lsd_lang'),
-        'update_item'         => __( 'Modifier un type la galerie', 'lsd_lang'),
+        'edit_item'           => __( 'Editer un type la Agenda', 'lsd_lang'),
+        'update_item'         => __( 'Modifier un type la Agenda', 'lsd_lang'),
         'not_found'           => __( 'Non trouvée', 'lsd_lang'),
         'not_found_in_trash'  => __( 'Non trouvée dans la corbeille', 'lsd_lang'),
     );
 
     $args = array(
-        'label'               => __( 'Types de Galerie', 'lsd_lang'),
-        'description'         => __( 'Toutes les Galerie', 'lsd_lang'),
+        'label'               => __( 'Types de Agenda', 'lsd_lang'),
+        'description'         => __( 'Tous les Agenda', 'lsd_lang'),
         'labels'              => $labels,
         'supports'            => array( 'title', 'author', 'revisions', 'custom-fields' ),
-        'show_in_rest'        => true,
+        'show_in_rest'        => false,
+        'show_ui'             => true,
         'menu_icon'           => 'dashicons-admin-home',
         'hierarchical'        => true,
         'public'              => true,
         'publicly_queryable' => true,
-        'has_archive'         => 'galerie',
-        'rewrite' => array(
-            'with_front' => true
-        )
+        'has_archive'         => 'agenda',
+        'rewrite' => true
     );
 
-    register_post_type( 'galerie', $args );
+    register_post_type( 'agenda', $args );
 
     // Product
 
 
     $labels = array(
-        'name'                => __( 'Articles', 'lsd_lang'),
-        'singular_name'       => __( 'Article', 'lsd_lang'),
-        'menu_name'           => __( 'Articles', 'lsd_lang'),
-        'all_items'           => __( 'Tous les types de Articles', 'lsd_lang'),
-        'view_item'           => __( 'Voir tous les types de Articles', 'lsd_lang'),
-        'add_new_item'        => __( 'Ajouter un Article', 'lsd_lang'),
+        'name'                => __( 'Stages', 'lsd_lang'),
+        'singular_name'       => __( 'Stage', 'lsd_lang'),
+        'menu_name'           => __( 'Stages', 'lsd_lang'),
+        'all_items'           => __( 'Tous les types de Stages', 'lsd_lang'),
+        'view_item'           => __( 'Voir tous les types de Stages', 'lsd_lang'),
+        'add_new_item'        => __( 'Ajouter un Stage', 'lsd_lang'),
         'add_new'             => __( 'Ajouter', 'lsd_lang'),
-        'edit_item'           => __( 'Editer un type la Article', 'lsd_lang'),
-        'update_item'         => __( 'Modifier un type la Article', 'lsd_lang'),
+        'edit_item'           => __( 'Editer un type Stages', 'lsd_lang'),
+        'update_item'         => __( 'Modifier un type Stages', 'lsd_lang'),
         'not_found'           => __( 'Non trouvée', 'lsd_lang'),
         'not_found_in_trash'  => __( 'Non trouvée dans la corbeille', 'lsd_lang'),
     );
 
     $args = array(
-        'label'               => __( 'Article', 'lsd_lang'),
-        'description'         => __( 'Article', 'lsd_lang'),
+        'label'               => __( 'Stages', 'lsd_lang'),
+        'description'         => __( 'Stages', 'lsd_lang'),
         'labels'              => $labels,
         'supports'            => array( 'title', 'author', 'revisions', 'custom-fields', 'thumbnail'),
         'show_in_rest'        => false,
@@ -117,7 +116,7 @@ function egp_custom_post_type() {
         )
     );
 
-    register_post_type( 'articles', $args );
+    register_post_type( 'les-stages', $args );
 
 }
 
