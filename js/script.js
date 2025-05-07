@@ -22,6 +22,17 @@ $(window).on('load',function(){
         $('.loader').fadeOut();
     },1200);
 
+
+    $('.open-modal').click(function(event){
+        event.preventDefault();
+        $('.modal-booking').fadeIn(300);
+    });
+
+    $('.cross-modal').click(function(event){
+        event.preventDefault();
+        $('.modal-booking').fadeOut(300);
+    });
+
 });
 
 

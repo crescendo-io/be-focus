@@ -130,57 +130,7 @@ $galerie_query = new WP_Query($args);
             </div>
         </div>
     </div>
-    <div class="strate container-text-only center  marge-small" style="background: #fef8ef">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h3>Nos <strong>valeurs</strong></h3>
 
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="strate container-pictos  marge-small" style="background: #fef8ef">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-sm-4">
-                    <div class="container-picto">
-                        <div class="picto-description">
-                            <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="https://harmony-builder.code/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
-                            <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
-                                Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="container-picto">
-                        <div class="picto-description">
-                            <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="https://harmony-builder.code/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
-                            <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
-                                Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="container-picto">
-                        <div class="picto-description">
-                            <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="https://harmony-builder.code/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
-                            <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
-                                Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-sm-12">
-                </div>
-            </div>
-        </div>
-    </div>
 
 <?php
 get_footer();
