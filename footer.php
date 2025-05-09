@@ -174,6 +174,7 @@
                                     <input type="tel" placeholder="Votre téléphone">
                                 </label>
                             </div>
+                            <input type="hidden" name="stage_id" class="modal-stage-id">
                             <div class="col-sm-12 text-center">
                                 <button type="submit" class="button">
                                     Valider ma demande d'inscription
