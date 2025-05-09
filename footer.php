@@ -119,7 +119,7 @@
             <div class="background-modal"></div>
             <button class="cross-modal"></button>
             <div class="container-form">
-                <form action="">
+                <form action="" id="form-booking">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-12">

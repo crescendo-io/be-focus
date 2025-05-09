@@ -19,6 +19,7 @@ function add_hreflang_tags() {
 add_action( 'wp_head', 'add_hreflang_tags' );
 
 
+
 function add_self_canonical_tag() {
     // Obtenir l'URL de la page actuelle
     $current_url = home_url( add_query_arg( NULL, NULL ) );
@@ -48,6 +49,10 @@ function wpm_enqueue_styles(){
         null, // Version du script (null pour désactiver la gestion des versions)
         true // Charger dans le footer (true) ou dans le header (false)
     );
+
+    wp_localize_script('script', 'my_ajax', [
+        'url' => admin_url('admin-ajax.php')
+    ]);
 }
 
 
@@ -336,3 +341,14 @@ function custom_breadcrumb() {
 
 add_image_size( 'relsize', 1920, 1080, true );
 add_image_size( 'crosslink', 900, 900, true );
+
+
+// Traitement de la requête AJAX
+add_action('wp_ajax_booking_form_submit', 'traitement_booking_form');
+add_action('wp_ajax_nopriv_booking_form_submit', 'traitement_booking_form');
+
+function traitement_booking_form() {
+    parse_str($_POST['form_data'], $form_data);
+    // Ici, traite les données du formulaire comme tu veux (envoi d'email, enregistrement, etc.)
+    wp_send_json_success('Réservation reçue !');
+}

@@ -32,6 +32,7 @@ $(window).on('load',function(){
         event.preventDefault();
         $('.modal-booking').fadeOut(300);
     });
+    
 
 });
 
@@ -70,4 +71,27 @@ $(window).scroll(function(){
             $('.fixed-bar').removeClass('scroll');
         }
     }
+});
+
+$('#form-booking').submit(function(e){
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    var form = $(this);
+    var formData = form.serialize();
+
+    $.ajax({
+        url: my_ajax.url, // Cette variable doit être définie côté WordPress (voir plus bas)
+        type: 'POST',
+        data: {
+            action: 'booking_form_submit', // Le nom de l'action côté PHP
+            form_data: formData
+        },
+        success: function(response){
+            // Traite la réponse ici (affichage d'un message, etc.)
+            alert('Réservation envoyée !');
+        },
+        error: function(){
+            alert('Erreur lors de l\'envoi.');
+        }
+    });
 });

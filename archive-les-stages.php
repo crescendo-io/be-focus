@@ -6,17 +6,13 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 // Arguments pour la WP_Query
 $args = array(
-    'post_type' => 'articles',
-    'posts_per_page' => 20,
-    'paged' => $paged,
-    'tax_query' => array(
-        'relation' => 'AND',
-    ),
+    'post_type' => 'les-stages',
+    'posts_per_page' => -1,
 );
 
 
 // La Query WP
-$galerie_query = new WP_Query($args);
+$query = new WP_Query($args);
 
 ?>
     <div class="strate-hero middle dark " style="color: #ffffff; background: ">
@@ -36,64 +32,67 @@ $galerie_query = new WP_Query($args);
             </div>
         </div>
     </div>
-    <div class="strate container-image-text " style="background: #ffffff">
-        <div class="background-cut bottom" style="background-color: #fef8ef; height: 20%;"></div>
-        <div class="container">
-            <div class="row">
-
-                <div class="col-sm-6">
-                    <img src="https://harmony-builder.code/wp-content/uploads/2025/05/image.jpg" class="image-strate" alt="" width="480" height="650" loading="lazy">
-                </div>
 
 
-                <div class="col-sm-6">
-                    <div class="text-content">
-                        <h3>Stage <strong>caméra</strong></h3>
-                        <p>Parce que développer en permanence des compétences permettant d’élargir son champ de jeu est essentiel.<br>
-                            Parce que être comédien demande un investissement important pour garder son profil à jour, nous souhaitons que nos stages soient financés uniquement par les droits à la formation pour lesquels tu cotises en travaillant.</p>
+    <?php
+    if ($query->have_posts()) {
 
+        $i = 1;
+        while ($query->have_posts()) {
+            $query->the_post();
+            $stage_short_desc = get_field('stage_short_desc');
+            $thumb_stage = get_the_post_thumbnail_url();
+            $i++;
+            ?>
 
-                        <div class="container-buttons">
-                            <a href="#" target="" class="button primary ">
-                                Découvrir le stage        </a>
+            <div class="strate container-image-text" style="background: <?= ($i == 2 || $i == 4) ? "#ffffff" : '#fef8ef'; ?>">
+                <?php if($i == 2): ?>
+                <div class="background-cut bottom" style="background-color: #fef8ef; height: 20%;"></div>
+                <?php endif; ?>
+                <?php if($i == 4): ?>
+                    <div class="background-cut top" style="background-color: #FEF8EF; height: 20%;"></div>
+                <?php endif; ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 <?= ($i%2 == 1) ? 'visible-xs' : ''; ?>">
+                            <?php if($thumb_stage): ?>
+                            <img src="<?= $thumb_stage; ?>" class="image-strate" alt="" width="480" height="650" loading="lazy">
+                            <?php endif; ?>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="text-content">
+                                <h3><?= get_the_title(); ?></h3><br/>
+                                <?= $stage_short_desc; ?>
+                                <div class="container-buttons">
+                                    <a href="<?= get_the_permalink(); ?>" target="" class="button primary ">
+                                        Découvrir le stage
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php if($i%2 == 1) :?>
+                            <div class="col-sm-6 <?= ($i%2 == 1) ? 'hidden-xs' : ''; ?>">
+                                <?php if($thumb_stage): ?>
+                                    <img src="<?= $thumb_stage; ?>" class="image-strate" alt="" width="480" height="650" loading="lazy">
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
 
                     </div>
                 </div>
-
             </div>
-        </div>
-    </div>
-    <div class="strate container-image-text " style="background: #fef8ef">
-        <div class="container">
-            <div class="row">
+
+            <?php
+        }
+        wp_reset_postdata();
+    } else {
+        echo '<p>Aucun Stage à venir.</p>';
+    }
+    ?>
 
 
-                <div class="col-sm-6 visible-xs">
-                    <img src="https://harmony-builder.code/wp-content/uploads/2025/05/image.jpg" class="image-strate" alt="" loading="lazy">
-                </div>
 
-                <div class="col-sm-6">
-                    <div class="text-content">
-                        <h3>Stage <strong>caméra</strong></h3>
-                        <p>Parce que développer en permanence des compétences permettant d’élargir son champ de jeu est essentiel.<br>
-                            Parce que être comédien demande un investissement important pour garder son profil à jour, nous souhaitons que nos stages soient financés uniquement par les droits à la formation pour lesquels tu cotises en travaillant.</p>
-
-
-                        <div class="container-buttons">
-                            <a href="#" target="" class="button primary ">
-                                Découvrir le stage        </a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-6 hidden-xs">
-                    <img src="https://harmony-builder.code/wp-content/uploads/2025/05/image.jpg" class="image-strate" alt="" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="temoignages-archive white">
         <div class="container strate">
@@ -104,28 +103,13 @@ $galerie_query = new WP_Query($args);
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <iframe width="100%" height="560"
-                            src="https://www.youtube.com/embed/Sjb8nhMwtwM"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                    <?= get_field("option_temoignage_1", 'option'); ?>
                 </div>
                 <div class="col-sm-4">
-                    <iframe width="100%" height="560"
-                            src="https://www.youtube.com/embed/Sjb8nhMwtwM"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                    <?= get_field("option_temoignage_2", 'option'); ?>
                 </div>
                 <div class="col-sm-4">
-                    <iframe width="100%" height="560"
-                            src="https://www.youtube.com/embed/Sjb8nhMwtwM"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                    <?= get_field("option_temoignage_3", 'option'); ?>
                 </div>
             </div>
         </div>
