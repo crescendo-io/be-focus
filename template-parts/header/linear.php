@@ -12,8 +12,8 @@
                     <div class="barre"></div>
                 </div>
                 <ul class="main-menu">
-                    <li>
-                        <a href="<?= get_site_url(); ?>/galerie/">
+                    <li class="<?= (is_post_type_archive('les-stages') || is_singular('les-stages')) ? 'active':'';?>">
+                        <a href="<?= get_site_url(); ?>/les-stages/">
                             Nos programmes
                         </a>
                     </li>
@@ -22,8 +22,8 @@
                             À propos
                         </a>
                     </li>
-                    <li>
-                        <a href="<?= get_site_url(); ?>/galerie/">
+                    <li class="<?= (is_post_type_archive('agenda')) ? 'active':'';?>">
+                        <a href="<?= get_site_url(); ?>/agenda/">
                             Agenda
                         </a>
                     </li>

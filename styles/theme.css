@@ -877,6 +877,27 @@ footer {
     background: linear-gradient(45deg, rgba(245, 233, 213, 1) 0%, rgba(248, 117, 61, 1) 100%);
 }
 
+input:invalid, textarea:invalid{
+    background: #FFF;
+}
+
+
+.header li{
+    position: relative;
+}
+.header li.active:after{
+    content: '';
+    width: calc(100% - 30px);
+    height: 1px;
+    background: #FFF;
+    position: absolute;
+    left: 15px;
+    bottom: -7px;
+}
+.header li.active a{
+    font-weight: 800;
+}
+
 .header{
     position: fixed;
     z-index: 300;

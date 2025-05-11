@@ -18,7 +18,7 @@ get_header();
                         <p>Notre stage caméra</p>
                     </div>
                     <div class="col-sm-5 text-right">
-                        <a href="" class="button">
+                        <a href="<?=get_site_url(); ?>/agenda/" class="button">
                             S'inscrire à la prochaine session
                         </a>
                     </div>

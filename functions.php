@@ -412,10 +412,7 @@ function traitement_booking_form() {
         $headers = array('Content-Type: text/html; charset=UTF-8');
 
         wp_mail($to, $subject, $message, $headers);
+        wp_send_json_success('Réservation reçue !');
     }
 
-
-
-
-    wp_send_json_success('Réservation reçue !');
 }

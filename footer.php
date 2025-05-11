@@ -163,31 +163,31 @@
                             <div class="col-sm-6">
                                 <label>
                                     Prénom *
-                                    <input type="text" name="firstname" placeholder="Votre prénom">
+                                    <input type="text" name="firstname" required placeholder="Votre prénom">
                                 </label>
                             </div>
                             <div class="col-sm-6">
                                 <label>
                                     Nom *
-                                    <input type="text" name="lastname" placeholder="Votre nom">
+                                    <input type="text" name="lastname" required placeholder="Votre nom">
                                 </label>
                             </div>
                             <div class="col-sm-6">
                                 <label>
                                     Ville *
-                                    <input type="text" name="city" placeholder="Votre ville">
+                                    <input type="text" name="city" required placeholder="Votre ville">
                                 </label>
                             </div>
                             <div class="col-sm-6">
                                 <label>
                                     Email *
-                                    <input type="email" name="email" placeholder="Votre email">
+                                    <input type="email" name="email" required placeholder="Votre email">
                                 </label>
                             </div>
                             <div class="col-sm-6">
                                 <label>
                                     Téléphone *
-                                    <input type="tel" name="phone" placeholder="Votre téléphone">
+                                    <input type="tel" name="phone" required placeholder="Votre téléphone">
                                 </label>
                             </div>
                             <input type="hidden" name="stage_id" class="modal-stage-id">
