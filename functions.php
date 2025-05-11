@@ -343,12 +343,79 @@ add_image_size( 'relsize', 1920, 1080, true );
 add_image_size( 'crosslink', 900, 900, true );
 
 
+
+use PHPMailer\PHPMailer\PHPMailer;
+add_action('phpmailer_init', 'custom_mailjet_smtp');
+function custom_mailjet_smtp(PHPMailer $phpmailer) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host       = 'in-v3.mailjet.com';
+    $phpmailer->SMTPAuth   = true;
+    $phpmailer->Port       = 587;
+    $phpmailer->Username   = '456ba360d83bb9ec9e665743728ebd34';    // Remplacez par votre clé API
+    $phpmailer->Password   = '6e18ab8a5a34801fe3ef527ecc7541f5';  // Remplacez par votre secret
+    $phpmailer->SMTPSecure = 'tls';
+    $phpmailer->From       = 'contact@crescendo-studio.io';
+    $phpmailer->FromName   = 'Be Focus';
+}
+
+
 // Traitement de la requête AJAX
 add_action('wp_ajax_booking_form_submit', 'traitement_booking_form');
 add_action('wp_ajax_nopriv_booking_form_submit', 'traitement_booking_form');
 
 function traitement_booking_form() {
     parse_str($_POST['form_data'], $form_data);
-    // Ici, traite les données du formulaire comme tu veux (envoi d'email, enregistrement, etc.)
+    
+
+    $email = $form_data['email'];
+    $firstname = $form_data['firstname'];
+    $lastname = $form_data['lastname'];
+    $city = $form_data['city'];
+    $phone = $form_data['phone'];
+    $stage_id = $form_data['stage_id'];
+    $status = $form_data['status'];
+
+    if(get_post($stage_id) && $email && $firstname && $lastname && $city && $phone && $stage_id && $status){
+
+        $to = 'bryanvidal01@gmail.com';
+        $subject = 'Réservation de stage';
+        $message = '
+        <html>
+        <head>
+        <style>
+            body { font-family: Arial, sans-serif; color: #333; }
+            .container { width: 100%; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; background-color: #FEF8EF; }
+            h2 { color: #FF435A; }
+            table { width: 100%; border-collapse: collapse; }
+            td { padding: 8px 0; }
+            .label { font-weight: bold; width: 150px; }
+        </style>
+        </head>
+        <body>
+        <div class="container">
+            <img src="'. get_stylesheet_directory_uri() . '/styles/img/banner.jpg" width=100%" alt="">
+            <h2>Nouvelle réservation de stage</h2>
+            <p>Une nouvelle demande de réservation vient d\'être soumise avec les informations suivantes :</p>
+            <table>
+            <tr><td class="label">Prénom :</td><td>' . esc_html($firstname) . '</td></tr>
+            <tr><td class="label">Nom :</td><td>' . esc_html($lastname) . '</td></tr>
+            <tr><td class="label">Email :</td><td>' . esc_html($email) . '</td></tr>
+            <tr><td class="label">Téléphone :</td><td>' . esc_html($phone) . '</td></tr>
+            <tr><td class="label">Ville :</td><td>' . esc_html($city) . '</td></tr>
+            <tr><td class="label">ID du stage :</td><td>' . esc_html(get_the_title($stage_id)) . '</td></tr>
+            <tr><td class="label">Date du stage :</td><td>' . get_field('agenda_date', $stage_id) . '</td></tr>
+            <tr><td class="label">Intermittent du spectacle :</td><td>' . (($status == 1) ? 'Oui' : 'Non') . '</td></tr>
+            </table>
+        </div>
+        </body>
+        </html>';
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+
+        wp_mail($to, $subject, $message, $headers);
+    }
+
+
+
+
     wp_send_json_success('Réservation reçue !');
 }

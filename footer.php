@@ -120,7 +120,23 @@
             <button class="cross-modal"></button>
             <div class="container-form">
                 <form action="" id="form-booking">
-                    <div class="container-fluid">
+
+                    <div class="success">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <div class="intro-modal">
+                                        <div class="title-modal">
+                                            Votre réservation a bien été reçue,<br/>
+                                            <strong>Merci pour votre confiance.</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid form-resa">
                         <div class="row">
                             <div class="col-sm-12">
 
@@ -138,7 +154,7 @@
                             <div class="col-sm-6">
                                 <label>
                                     Statut
-                                    <select name="" id="">
+                                    <select name="status" id="">
                                         <option value="1">Je suis intermittent du spectacle</option>
                                         <option value="2">Je ne suis pas intermittent du spectacle</option>
                                     </select>
@@ -147,31 +163,31 @@
                             <div class="col-sm-6">
                                 <label>
                                     Prénom *
-                                    <input type="text" placeholder="Votre prénom">
+                                    <input type="text" name="firstname" placeholder="Votre prénom">
                                 </label>
                             </div>
                             <div class="col-sm-6">
                                 <label>
                                     Nom *
-                                    <input type="text" placeholder="Votre nom">
+                                    <input type="text" name="lastname" placeholder="Votre nom">
                                 </label>
                             </div>
                             <div class="col-sm-6">
                                 <label>
                                     Ville *
-                                    <input type="text" placeholder="Votre ville">
+                                    <input type="text" name="city" placeholder="Votre ville">
                                 </label>
                             </div>
                             <div class="col-sm-6">
                                 <label>
                                     Email *
-                                    <input type="email" placeholder="Votre email">
+                                    <input type="email" name="email" placeholder="Votre email">
                                 </label>
                             </div>
                             <div class="col-sm-6">
                                 <label>
                                     Téléphone *
-                                    <input type="tel" placeholder="Votre téléphone">
+                                    <input type="tel" name="phone" placeholder="Votre téléphone">
                                 </label>
                             </div>
                             <input type="hidden" name="stage_id" class="modal-stage-id">

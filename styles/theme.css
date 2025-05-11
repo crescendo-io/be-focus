@@ -718,6 +718,10 @@ footer {
     z-index: 500;
     display: none;
 }
+
+.modal-booking .success{
+    display: none;
+}
 .modal-booking .background-modal{
     position: absolute;
     width: 100%;

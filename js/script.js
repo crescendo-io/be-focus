@@ -76,6 +76,8 @@ $('#form-booking').submit(function(e){
     var form = $(this);
     var formData = form.serialize();
 
+    console.log(formData);
+
     $.ajax({
         url: my_ajax.url, // Cette variable doit être définie côté WordPress (voir plus bas)
         type: 'POST',
@@ -85,7 +87,8 @@ $('#form-booking').submit(function(e){
         },
         success: function(response){
             // Traite la réponse ici (affichage d'un message, etc.)
-            alert('Réservation envoyée !');
+            $('.form-resa').hide();
+            $('#form-booking .success').fadeIn(0);
         },
         error: function(){
             alert('Erreur lors de l\'envoi.');
