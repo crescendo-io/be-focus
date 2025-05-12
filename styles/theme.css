@@ -881,9 +881,14 @@ input:invalid, textarea:invalid{
     background: #FFF;
 }
 
-.container-pushs-articles .container-pushs-article h2{
+.container-pushs-articles .container-pushs-article h1,
+.container-pushs-articles .container-pushs-article h2,
+.container-pushs-articles .container-pushs-article h3,
+.container-pushs-articles .container-pushs-article h4,
+.container-pushs-articles .container-pushs-article h5{
     font-size: 25px;
     line-height: 32px;
+    margin-bottom: 0;
 }
 
 .container-pushs-articles .container-pushs-article .pushs-article-description{
