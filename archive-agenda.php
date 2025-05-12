@@ -20,7 +20,7 @@ $galerie_query = new WP_Query($args);
 
 ?>
     <div class="strate-hero middle dark " style="color: #ffffff; background: ">
-        <img src="https://harmony-builder.code/wp-content/uploads/2025/05/image-1137.png" class="strate-hero_image" alt="" width="3456" height="1930">
+        <img src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1137.png" class="strate-hero_image" alt="" width="3456" height="1930">
         <div class="strate-hero_inner">
             <h1><em><strong>Agenda </strong></em></h1>
             <p>&nbsp;</p>

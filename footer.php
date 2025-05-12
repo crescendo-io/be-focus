@@ -18,7 +18,7 @@
                     <div class="col-sm-4">
                         <div class="container-picto">
                             <div class="picto-description">
-                                <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="https://harmony-builder.code/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
+                                <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
                                 <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
                                     Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
                             </div>
@@ -27,7 +27,7 @@
                     <div class="col-sm-4">
                         <div class="container-picto">
                             <div class="picto-description">
-                                <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="https://harmony-builder.code/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
+                                <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
                                 <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
                                     Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
                             </div>
@@ -36,7 +36,7 @@
                     <div class="col-sm-4">
                         <div class="container-picto">
                             <div class="picto-description">
-                                <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="https://harmony-builder.code/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
+                                <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
                                 <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
                                     Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
                             </div>
@@ -55,7 +55,7 @@
             <div class="row">
 
                 <div class="col-sm-6">
-                    <img src="https://harmony-builder.code/wp-content/uploads/2025/05/image-1144.png" class="image-strate" alt="" width="613" height="585" loading="lazy">
+                    <img src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1144.png" class="image-strate" alt="" width="613" height="585" loading="lazy">
                 </div>
 
 
