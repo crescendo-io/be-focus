@@ -907,8 +907,14 @@ input:invalid, textarea:invalid{
     left: 15px;
     bottom: -7px;
 }
+
+
 .header li.active a{
     font-weight: 800;
+}
+
+.header li a:hover{
+    text-decoration: none;
 }
 
 .header{
@@ -1171,7 +1177,7 @@ input:invalid, textarea:invalid{
 .card-session-fontpage{
     background: #FEF8EF;
     border-radius: 30px;
-    overflow: auto;
+    overflow: hidden;
     margin-top: 40px;
 }
 
