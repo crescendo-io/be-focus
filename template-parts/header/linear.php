@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="col-sm-5 text-right">
-                <a href="#devis" class="button">Je reserve mon stage</a>
+                <a href="<?= get_site_url(); ?>/agenda/" class="button">Je reserve mon stage</a>
             </div>
         </div>
     </div>
