@@ -1371,7 +1371,6 @@ input:invalid, textarea:invalid{
         position: absolute;
         left: 0;
         bottom: 0;
-        padding: 2vw;
         color: #FFF;
         z-index: 10;
         text-align: left;
