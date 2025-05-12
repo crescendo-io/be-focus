@@ -881,6 +881,14 @@ input:invalid, textarea:invalid{
     background: #FFF;
 }
 
+.container-pushs-articles .container-pushs-article h2{
+    font-size: 25px;
+    line-height: 32px;
+}
+
+.container-pushs-articles .container-pushs-article .pushs-article-description{
+    padding: 30px;
+}
 
 .header li{
     position: relative;
