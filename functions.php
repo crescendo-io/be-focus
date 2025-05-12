@@ -354,7 +354,7 @@ function custom_mailjet_smtp(PHPMailer $phpmailer) {
     $phpmailer->Username   = '456ba360d83bb9ec9e665743728ebd34';    // Remplacez par votre clé API
     $phpmailer->Password   = '6e18ab8a5a34801fe3ef527ecc7541f5';  // Remplacez par votre secret
     $phpmailer->SMTPSecure = 'tls';
-    $phpmailer->From       = 'contact@crescendo-studio.io';
+    $phpmailer->From       = 'infos@crescendo-studio.io';
     $phpmailer->FromName   = 'Be Focus';
 }
 
