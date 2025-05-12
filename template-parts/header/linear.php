@@ -17,8 +17,8 @@
                             Nos programmes
                         </a>
                     </li>
-                    <li>
-                        <a href="<?= get_site_url(); ?>/galerie/">
+                    <li class="<?= (get_the_id() == '406') ? 'active' : ''; ?>">
+                        <a href="<?= get_site_url(); ?>/a-propos/">
                             À propos
                         </a>
                     </li>
