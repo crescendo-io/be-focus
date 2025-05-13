@@ -12,10 +12,10 @@ get_header();
     <div class="fixed-bar">
         <div class="card-fixed">
             <div class="progress-bar-posttype"></div>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-sm-7">
-                        <p>Notre stage caméra</p>
+                        <p><?= get_the_title(); ?></p>
                     </div>
                     <div class="col-sm-5 text-right">
                         <a href="<?=get_site_url(); ?>/agenda/" class="button">
