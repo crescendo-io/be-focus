@@ -73,7 +73,7 @@
     </div>
 <?php endif; ?>
 
-<div class="strate container-text-only two-cols white modality" style="background: #111">
+<div class="strate container-text-only two-cols white modality" style="background: #222">
     <div class="container">
         <div class="row">
             <div class="col-sm-5">
