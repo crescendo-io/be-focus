@@ -73,6 +73,32 @@
     </div>
 <?php endif; ?>
 
+<div class="strate container-text-only two-cols white modality" style="background: #111">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <h3 style="text-align: left;">Accès handicap</h3>
+                <p style="text-align: left;">Si le demandeur est en situation d’handicap, prendre contact pour l’acceptabilité à cette formation.&nbsp;Le référent pédagogique, administratif et sur la situation d’handicap est Jérémie Edery :&nbsp;<a href="mailto:contact@befocus.fr">contact@befocus.fr</a>&nbsp;/ 09 86 40 02 41</p>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5">
+                <h3 style="text-align: left;">Indicateurs de satisfaction</h3>
+                <p style="text-align: left;">Période du 1er janvier 2024 au 20 octobre 2024<br>
+                    Nombre total de sessions : 3<br>
+                    Nombre de stagiaires/session : 11<br>
+                    Nombre total de stagiaires : 31<br>
+                    Taux de satisfaction : 97,20%<br>
+                    Taux de retour d’enquête : 100%</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 center">
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <?php
     $option_logo_footer = get_field('option_logo_footer', 'option');
     $option_logo_footer_array = get_custom_thumb($option_logo_footer, 'full');
