@@ -416,3 +416,56 @@ function traitement_booking_form() {
     }
 
 }
+
+// Traitement de la requête AJAX
+add_action('wp_ajax_contact_form_submit', 'traitement_contact_form');
+add_action('wp_ajax_nopriv_contact_form_submit', 'traitement_contact_form');
+
+function traitement_contact_form() {
+    parse_str($_POST['form_data'], $form_data);
+
+
+    $email = $form_data['email'];
+    $firstname = $form_data['firstname'];
+    $lastname = $form_data['lastname'];
+    $phone = $form_data['phone'];
+    $message = $form_data['message'];
+
+    if($email && $firstname && $lastname && $message && $phone){
+
+        $to = 'bryanvidal01@gmail.com';
+        $subject = 'Demande de contact';
+        $message = '
+        <html>
+        <head>
+        <style>
+            body { font-family: Arial, sans-serif; color: #333; }
+            .container { width: 100%; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; background-color: #FEF8EF; }
+            h2 { color: #FF435A; }
+            table { width: 100%; border-collapse: collapse; }
+            td { padding: 8px 0; }
+            .label { font-weight: bold; width: 150px; }
+        </style>
+        </head>
+        <body>
+        <div class="container">
+            <img src="'. get_stylesheet_directory_uri() . '/styles/img/banner.jpg" width=100%" alt="">
+            <h2>Nouvelle demande de contact</h2>
+            <p>Une nouvelle demande de contact vient d\'être soumise avec les informations suivantes :</p>
+            <table>
+            <tr><td class="label">Prénom :</td><td>' . esc_html($firstname) . '</td></tr>
+            <tr><td class="label">Nom :</td><td>' . esc_html($lastname) . '</td></tr>
+            <tr><td class="label">Email :</td><td>' . esc_html($email) . '</td></tr>
+            <tr><td class="label">Téléphone :</td><td>' . esc_html($phone) . '</td></tr>
+            <tr><td class="label">Message :</td><td>' . esc_html($message) . '</td></tr>
+            </table>
+        </div>
+        </body>
+        </html>';
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+
+        wp_mail($to, $subject, $message, $headers);
+        wp_send_json_success('Message envoyé !');
+    }
+
+}

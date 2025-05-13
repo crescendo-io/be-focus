@@ -120,7 +120,6 @@
             <button class="cross-modal"></button>
             <div class="container-form">
                 <form action="" id="form-booking">
-
                     <div class="success">
                         <div class="container-fluid">
                             <div class="row">
@@ -194,6 +193,80 @@
                             <div class="col-sm-12 text-center">
                                 <button type="submit" class="button">
                                     Valider ma demande d'inscription
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal-contact">
+            <div class="background-modal"></div>
+            <button class="cross-modal"></button>
+            <div class="container-form">
+                <form action="" id="form-contact">
+                    <div class="success">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="intro-modal">
+                                        <div class="title-modal">
+                                            Votre message a bien été envoyé.<br/>
+                                            <strong>Merci pour votre confiance.</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid form-resa">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="intro-modal">
+                                    <div class="title-modal">
+                                        Demande de
+                                    </div>
+                                    <div class="stage-type">Contact</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>
+                                    Prénom *
+                                    <input type="text" name="firstname" required placeholder="Votre prénom">
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>
+                                    Nom *
+                                    <input type="text" name="lastname" required placeholder="Votre nom">
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>
+                                    Email *
+                                    <input type="email" name="email" required placeholder="Votre email">
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>
+                                    Téléphone *
+                                    <input type="tel" name="phone" required placeholder="Votre téléphone">
+                                </label>
+                            </div>
+                            <div class="col-sm-12">
+                                <label>
+                                    Votre message *
+                                    <textarea name="message" required placeholder="Votre message"></textarea>
+                                </label>
+                            </div>
+                            <input type="hidden" name="stage_id" class="modal-stage-id">
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" class="button">
+                                    Envoyer mon message
                                 </button>
                             </div>
                         </div>

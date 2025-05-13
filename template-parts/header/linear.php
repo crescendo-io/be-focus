@@ -28,7 +28,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= get_site_url(); ?>/galerie/">
+                        <a href="#contact" class="open-modal-contact">
                             Nous contacter
                         </a>
                     </li>

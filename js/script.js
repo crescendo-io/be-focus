@@ -40,11 +40,21 @@ $(window).on('load',function(){
     $('.cross-modal').click(function(event){
         event.preventDefault();
         $('.modal-booking').fadeOut(300);
+        $('.modal-contact').fadeOut(300);
+        $('.form-resa').fadeIn();
+        $('form .success').fadeOut();
+    });
+
+    $('a[href="#contact"]').on('click', function(e) {
+        var el = $(this);
+
+        e.preventDefault();
+        $('.modal-contact').fadeIn(300);
+
     });
     
 
 });
-
 
 
 $(window).scroll(function(){
@@ -76,8 +86,6 @@ $('#form-booking').submit(function(e){
     var form = $(this);
     var formData = form.serialize();
 
-    console.log(formData);
-
     $.ajax({
         url: my_ajax.url, // Cette variable doit être définie côté WordPress (voir plus bas)
         type: 'POST',
@@ -89,6 +97,30 @@ $('#form-booking').submit(function(e){
             // Traite la réponse ici (affichage d'un message, etc.)
             $('.form-resa').hide();
             $('#form-booking .success').fadeIn(0);
+        },
+        error: function(){
+            alert('Erreur lors de l\'envoi.');
+        }
+    });
+});
+
+$('#form-contact').submit(function(e){
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    var form = $(this);
+    var formData = form.serialize();
+
+    $.ajax({
+        url: my_ajax.url, // Cette variable doit être définie côté WordPress (voir plus bas)
+        type: 'POST',
+        data: {
+            action: 'contact_form_submit', // Le nom de l'action côté PHP
+            form_data: formData
+        },
+        success: function(response){
+            // Traite la réponse ici (affichage d'un message, etc.)
+            $('.form-resa').hide();
+            $('#form-contact .success').fadeIn(0);
         },
         error: function(){
             alert('Erreur lors de l\'envoi.');
