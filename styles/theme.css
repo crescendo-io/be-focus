@@ -1405,7 +1405,7 @@ input:invalid, textarea:invalid{
     position: relative;
     border: 0;
     padding: 0;
-    margin-bottom: 30px;
+    margin-bottom: 0x;
 
     &:before{
         content: '';
