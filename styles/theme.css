@@ -614,7 +614,8 @@ footer {
 
 .sub-footer{
     text-align: center;
-    padding: 30px 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .sub-footer img{
@@ -2201,7 +2202,6 @@ svg .svg-elem-1{fill:transparent;transition:fill 0.3s ease-in-out 0s}svg.active 
 
     .strate-hero .strate-hero_inner{
         width: 100%;
-        left: 0;
         padding: 0 15px;
     }
 
@@ -2219,8 +2219,8 @@ svg .svg-elem-1{fill:transparent;transition:fill 0.3s ease-in-out 0s}svg.active 
     }
 
     h3 {
-        font-size: 25px;
-        line-height: 30px;
+        font-size: 45px;
+        line-height: 50px;
     }
 
     h2 {
@@ -2267,6 +2267,9 @@ svg .svg-elem-1{fill:transparent;transition:fill 0.3s ease-in-out 0s}svg.active 
         display: none;
     }
 
+    .temoignages-archive iframe{
+        height: 300px;
+    }
     .container-image-on-text{
         width: 100%;
     }
@@ -2299,13 +2302,33 @@ svg .svg-elem-1{fill:transparent;transition:fill 0.3s ease-in-out 0s}svg.active 
         line-height: 20px;
     }
 
+    .header.scroll .logo{
+        width: 80px;
+    }
+
+    .strate-hero .container-buttons{
+        margin-top: 0;
+    }
+    .header.scroll .main-menu li{
+        height: auto;
+    }
+
+    .container-iframe iframe{
+        height: 300px;
+    }
+
+    .card-session-fontpage .container-info-session{
+        text-align: center;
+    }
 
     .header{
         padding: 0 0;
         .logo{
-            padding-bottom: 0;
             position: relative;
             z-index: 30;
+            width: 80px;
+            padding-top: 17px;
+            padding-bottom: 10px;
         }
         .button{
             display: none;
@@ -2372,19 +2395,21 @@ svg .svg-elem-1{fill:transparent;transition:fill 0.3s ease-in-out 0s}svg.active 
 
     .header .burger-menu{
         position: fixed;
-        right: 20px;
+        left: 20px;
         top: 50%;
+        color: #FFF;
+        font-family: "Fustat", sans-serif;
         z-index: 30;
-        transform: translateY(-50%);
+        transform: translateY(calc(-50% + 3px));
 
         &:before{
             content: 'Menu';
             position: absolute;
-            right: calc( 100% + 10px );
+            left: calc( 100% + 10px );
             top: 50%;
-            font-size: 16px;
+            font-size:  18px;
+            font-weight: 800;
             transform: translateY(-50%);
-            font-weight: 600;
         }
 
         .barre{
@@ -2476,5 +2501,58 @@ svg .svg-elem-1{fill:transparent;transition:fill 0.3s ease-in-out 0s}svg.active 
 
     .filter-buttons-toggle{
         width: 100%;
+    }
+
+    .strate-hero.middle{
+        height: 350px !important;
+    }
+
+    .les-stages-template-default .container-text-only.left .container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .fixed-bar{
+        position: relative;
+        text-align: center;
+    }
+
+    .fixed-bar .card-fixed{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .fixed-bar .card-fixed p{
+        font-size: 27px;
+    }
+
+    .fixed-bar .text-right{
+        text-align: center !important;
+    }
+
+    .fixed-bar .button{
+        margin-top: 30px;
+    }
+
+    .header li.active:after{
+        display: none;
+    }
+
+    .card-agenda{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .modal-booking .title-modal, .modal-contact .title-modal,
+    .modal-booking .stage-type, .modal-contact .stage-type{
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    .container-form{
+        max-height: 100%;
+        overflow: auto;
     }
 }

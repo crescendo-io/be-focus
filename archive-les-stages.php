@@ -24,11 +24,13 @@ $query = new WP_Query($args);
     </div>
     <div class="strate marge-small"></div>
     <div class="strate marge-small"></div>
-    <div class="container strate text-center marge-small">
-        <div class="row">
-            <div class="col-sm-8 mx-auto">
-                <h2><strong>Découvrez</strong> le stage<br/>
-                    fait pour vous</h2>
+    <div class="strate text-center marge-small">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 mx-auto">
+                    <h2><strong>Découvrez</strong> le stage<br/>
+                        fait pour vous</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -94,8 +96,8 @@ $query = new WP_Query($args);
 
 
 
-    <div class="temoignages-archive white">
-        <div class="container strate">
+    <div class="temoignages-archive white strate">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>La parole aux <br/><strong>comédiens</strong></h2>
