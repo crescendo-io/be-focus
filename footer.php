@@ -1,6 +1,9 @@
-<?php if(!is_front_page()): ?>
+<?php
 
-    <?php if(!is_singular()): ?>
+if(!is_front_page()): ?>
+
+    <?php if(!is_single()): ?>
+
         <div class="strate marge <?= (is_post_type_archive('les-stages')) ? "marge-small" : ""; ?>" style="background: #fef8ef">
         </div>
         <div class="strate container-text-only center  marge-small" style="background: #fef8ef">
