@@ -671,6 +671,7 @@ footer {
     font-size: 18px;
     margin-top: 30px;
     margin-bottom: 30px;
+    min-height: calc(100% - 30px);
 }
 
 .card-agenda .intervenant p strong{
