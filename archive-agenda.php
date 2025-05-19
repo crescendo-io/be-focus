@@ -59,6 +59,23 @@ $galerie_query = new WP_Query($args);
                 ];
 
                 $query = new WP_Query($args);
+                $nbPosts = $query->found_posts;
+
+                switch ($nbPosts) {
+                    case 1:
+                        $colWidth = 12;
+                        break;
+                    case 2:
+                        $colWidth = 6;
+                        break;
+                    case 3:
+                        $colWidth = 4;
+                        break;
+                    // Optionnel : ajouter un "default"
+                    default:
+                        $colWidth = 3; // Par exemple pour 4+ posts
+                        break;
+                }
 
                 if ($query->have_posts()) {
                     while ($query->have_posts()) {
@@ -67,7 +84,7 @@ $galerie_query = new WP_Query($args);
                         $agenda_type = get_field("agenda_type");
 
                         ?>
-                        <div class="col-sm-4">
+                        <div class="col-sm-<?= $colWidth; ?>">
                             <div class="card-agenda">
                                 <div class="title-event">
                                     <strong><?= get_the_title(); ?></strong>
