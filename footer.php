@@ -261,6 +261,16 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <label>
+                                    Statut
+                                    <select name="status" id="">
+                                        <option value="1">Demande de contact</option>
+                                        <option value="2">Demande de réclamation</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-6">
+                                <label>
                                     Prénom *
                                     <input type="text" name="firstname" required placeholder="Votre prénom">
                                 </label>

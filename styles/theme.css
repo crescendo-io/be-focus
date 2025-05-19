@@ -1401,44 +1401,7 @@ input:invalid, textarea:invalid{
     }
 }
 
-.container-pushs-articles .container-pushs-article{
-    position: relative;
-    border: 0;
-    padding: 0;
-    margin-bottom: 0x;
 
-    &:before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        background: rgb(0,0,0);
-        background: linear-gradient(0deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0.13071165966386555) 80%);
-        width: 100%;
-        height: 100%;
-    }
-
-    &.no-bg{
-        &:before{
-            display: none;
-        }
-    }
-    .pushs-article-image{
-        margin-bottom: 0;
-    }
-    .fake-link{
-        display: none;
-    }
-    .pushs-article-description{
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        color: #FFF;
-        z-index: 10;
-        text-align: left;
-    }
-}
 
 .container-slider-quotes .citation{
     text-align: center;
@@ -1454,6 +1417,24 @@ input:invalid, textarea:invalid{
 
 .container-pushs-articles .container-pushs-article .pushs-article-description h3{
     padding-bottom: 10px;
+}
+
+.list-speakers .container-pushs-article img{
+    width: 40px;
+    margin-bottom: 15px;
+}
+
+.list-speakers.container-pushs-articles .container-pushs-article .pushs-article-description{
+    padding: 0;
+}
+.list-speakers.container-pushs-articles .container-pushs-article{
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.list-speakers.container-pushs-articles .container-pushs-article .pushs-article-description h3{
+    padding-bottom: 0;
+    font-family: "Playfair", serif;
 }
 
 .introduction-product iframe{

@@ -430,8 +430,9 @@ function traitement_contact_form() {
     $lastname = $form_data['lastname'];
     $phone = $form_data['phone'];
     $message = $form_data['message'];
+    $status = $form_data['status'];
 
-    if($email && $firstname && $lastname && $message && $phone){
+    if($email && $firstname && $lastname && $message && $phone && $status){
 
         $to = 'bryanvidal01@gmail.com';
         $subject = 'Demande de contact';
@@ -453,6 +454,7 @@ function traitement_contact_form() {
             <h2>Nouvelle demande de contact</h2>
             <p>Une nouvelle demande de contact vient d\'être soumise avec les informations suivantes :</p>
             <table>
+            <tr><td class="label">Object :</td><td>' . (($status == 1) ? 'Demande de contact' : 'Demande de réclamation') . '</td></tr>
             <tr><td class="label">Prénom :</td><td>' . esc_html($firstname) . '</td></tr>
             <tr><td class="label">Nom :</td><td>' . esc_html($lastname) . '</td></tr>
             <tr><td class="label">Email :</td><td>' . esc_html($email) . '</td></tr>

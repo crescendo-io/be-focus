@@ -8,6 +8,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type' => 'les-stages',
     'posts_per_page' => -1,
+    'post_parent'    => 0
 );
 
 
