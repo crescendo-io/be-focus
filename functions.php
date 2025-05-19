@@ -109,7 +109,7 @@ function egp_custom_post_type() {
         'label'               => __( 'Stages', 'lsd_lang'),
         'description'         => __( 'Stages', 'lsd_lang'),
         'labels'              => $labels,
-        'supports'            => array( 'title', 'author', 'revisions', 'custom-fields', 'thumbnail'),
+        'supports'            => array( 'title', 'author', 'revisions', 'custom-fields', 'thumbnail', 'page-attributes'),
         'show_in_rest'        => false,
         'menu_icon'           => 'dashicons-admin-home',
         'hierarchical'        => true,
