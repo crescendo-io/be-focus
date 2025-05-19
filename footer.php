@@ -19,8 +19,8 @@
                         <div class="container-picto">
                             <div class="picto-description">
                                 <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
-                                <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
-                                    Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                <p style="text-align: center;"><strong>Exigence</strong><br>
+                                    Nous privilégions la qualité plutôt que la quantité en proposant des groupes de formation à taille  humaine,  animés  autour  d’objectifs individualisés.</p>
                             </div>
                         </div>
                     </div>
@@ -28,8 +28,8 @@
                         <div class="container-picto">
                             <div class="picto-description">
                                 <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
-                                <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
-                                    Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                <p style="text-align: center;"><strong>Transparence</strong><br>
+                                    Nous partageons une vision réaliste du marché, afin de vous faire comprendre les rouages du métier et vous permettre de professionnaliser votre approche.</p>
                             </div>
                         </div>
                     </div>
@@ -37,8 +37,8 @@
                         <div class="container-picto">
                             <div class="picto-description">
                                 <p><img decoding="async" class="alignnone size-full wp-image-370 aligncenter" src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1156.png" alt="" width="78" height="78"></p>
-                                <p style="text-align: center;"><strong>Pédagogie accessible</strong><br>
-                                    Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                <p style="text-align: center;"><strong>Considération</strong><br>
+                                    Nous avons à cœur de respecter et de prendre soin des comédiens à travers un cadre de travail sécurisant et réellement centré sur leurs besoins.</p>
                             </div>
                         </div>
                     </div>
