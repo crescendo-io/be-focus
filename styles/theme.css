@@ -1384,23 +1384,16 @@ input:invalid, textarea:invalid{
     width: 100%;
 }
 
-.container-text-only.text-intro {
-    padding-top: 8vw;
-    padding-bottom: 8vw;
 
-    &:after{
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 20vw;
-        height: 23vw;
-        background: url(img/picto-blue.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
+
+.not-event{
+    font-size: 25px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 180px;
 }
-
 
 
 .container-slider-quotes .citation{

@@ -83,7 +83,7 @@ $galerie_query = new WP_Query($args);
                     }
                     wp_reset_postdata();
                 } else {
-                    echo '<p>Aucun événement à venir.</p>';
+                    echo '<p class="not-event"><strong>Pas d’événement à l’horizon pour l’instant.</strong> <br/>Mais reste dans le coin, des surprises arrivent bientôt !</p>';
                 }
                 ?>
             </div>

@@ -12,7 +12,28 @@ get_header();
     while ( have_rows('page') ) : the_row(); $i++;
         get_template_part('template-parts/strates/' . get_row_layout());
 
-        if($i == 5){ ?>
+        $today = date('Y-m-d H:i:s');; // format Ymd, standard pour les dates ACF
+        $args = [
+            'post_type'      => 'agenda',
+            'posts_per_page' => 2,
+            'post_status'    => 'publish',
+            'meta_key'       => 'agenda_date',
+            'orderby'        => 'meta_value',
+            'order'          => 'ASC',
+            'meta_query'     => [
+                [
+                    'key'     => 'agenda_date',
+                    'value'   => $today,
+                    'compare' => '>',
+                    'type'    => 'DATETIME',
+                ],
+            ],
+        ];
+
+        $query = new WP_Query($args);
+
+
+        if($i == 5 && $query->found_posts){ ?>
 
             <div class="strate next-sessions">
                 <div class="container">
@@ -23,25 +44,7 @@ get_header();
                     </div>
 
                     <?php
-                    $today = date('Y-m-d H:i:s');; // format Ymd, standard pour les dates ACF
-                    $args = [
-                        'post_type'      => 'agenda',
-                        'posts_per_page' => 2,
-                        'post_status'    => 'publish',
-                        'meta_key'       => 'agenda_date',
-                        'orderby'        => 'meta_value',
-                        'order'          => 'ASC',
-                        'meta_query'     => [
-                            [
-                                'key'     => 'agenda_date',
-                                'value'   => $today,
-                                'compare' => '>',
-                                'type'    => 'DATETIME',
-                            ],
-                        ],
-                    ];
 
-                    $query = new WP_Query($args);
 
                     if ($query->have_posts()) {
                         $nombre = 1;
