@@ -1226,7 +1226,7 @@ input:invalid, textarea:invalid{
 }
 
 .card-session-fontpage .container-info-session{
-    padding: 30px 40px;
+    padding: 80px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
