@@ -541,7 +541,7 @@ header.burger.is-scrolled {
     padding: 15px;
     padding-bottom: 30px;
     border: 1px solid #CCC;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     height: auto;
     text-align: center;
 
