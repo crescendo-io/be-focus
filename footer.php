@@ -83,12 +83,13 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
                 <h3 style="text-align: left;">Indicateurs de satisfaction</h3>
-                <p style="text-align: left;">Période du 1er janvier 2024 au 20 octobre 2024<br>
-                    Nombre total de sessions : 3<br>
-                    Nombre de stagiaires/session : 11<br>
-                    Nombre total de stagiaires : 31<br>
-                    Taux de satisfaction : 97,20%<br>
-                    Taux de retour d’enquête : 100%</p>
+                <p style="text-align: left;">Période du 1er janvier 2024 au 20 mars 2025 :<br/>
+                    Nombre total de sessions : 7<br/>
+                    Nombre moyen de stagiaires / session : 9<br/>
+                    Nombre total de stagiaires : 62<br/>
+                    Taux de satisfaction : 98,08%<br/>
+                    Taux de retour d’enquête : 100%<br/>
+                    Taux d’abandon : 0%
             </div>
         </div>
         <div class="row">
