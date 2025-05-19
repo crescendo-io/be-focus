@@ -674,6 +674,11 @@ footer {
     min-height: calc(100% - 30px);
 }
 
+.container-text-only.left h3{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 .card-agenda .intervenant p strong{
     font-size: 16px;
 }
