@@ -76,31 +76,42 @@ if(!is_front_page()): ?>
     </div>
 <?php endif; ?>
 
-<div class="strate container-text-only two-cols white modality" style="background: #222">
+<?php if(is_post_type_archive('les-stages')): ?>
+<div class="strate container-accordeon white" style="background: #000000">
     <div class="container">
         <div class="row">
-            <div class="col-sm-5">
-                <h3 style="text-align: left;">Accès handicap</h3>
-                <p style="text-align: left;">Si le demandeur est en situation d’handicap, prendre contact pour l’acceptabilité à cette formation.&nbsp;Le référent pédagogique, administratif et sur la situation d’handicap est Jérémie Edery :&nbsp;<a href="mailto:contact@befocus.fr">contact@befocus.fr</a>&nbsp;/ 09 86 40 02 41</p>
-            </div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-5">
-                <h3 style="text-align: left;">Indicateurs de satisfaction</h3>
-                <p style="text-align: left;">Période du 1er janvier 2024 au 20 mars 2025 :<br/>
-                    Nombre total de sessions : 7<br/>
-                    Nombre moyen de stagiaires / session : 9<br/>
-                    Nombre total de stagiaires : 62<br/>
-                    Taux de satisfaction : 98,08%<br/>
-                    Taux de retour d’enquête : 100%<br/>
-                    Taux d’abandon : 0%
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 center">
+            <div class="col-sm-12">
+                <div class="accordeon">
+                    <div class="accordeon-item">
+                        <div class="accordeon-item-title">
+                            <p style="font-size: 22px;"><strong>Accès handicap</strong></p>
+                        </div>
+                        <div class="accordeon-item-text">
+                            <p>Si le demandeur est en situation d’handicap, prendre contact pour l’acceptabilité à cette formation.&nbsp;Le référent pédagogique, administratif et sur la situation d’handicap est Jérémie Edery :&nbsp;<a href="mailto:contact@befocus.fr" style="color:#FFF;">contact@befocus.fr</a>&nbsp;/ 09 86 40 02 41</p>
+                        </div>
+                    </div>
+
+                    <div class="accordeon-item">
+                        <div class="accordeon-item-title">
+                            <p style="font-size: 22px;"><strong>Indicateurs de satisfaction</strong></p>
+                        </div>
+                        <div class="accordeon-item-text">
+                            <p>Période du 1er janvier 2024 au 20 mars 2025 :<br>
+                                Nombre total de sessions : 7<br>
+                                Nombre moyen de stagiaires / session : 9<br>
+                                Nombre total de stagiaires : 62<br>
+                                Taux de satisfaction : 98,08%<br>
+                                Taux de retour d’enquête : 100%<br>
+                                Taux d’abandon : 0%</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 </div>
+<?php endif; ?>
 
 
 <?php

@@ -177,7 +177,7 @@ p {
     font-size: 3vw;
 }
 .strate-hero.dark:before{
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.75);
 }
 .strate-hero .strate-hero_inner {
     position: absolute;
