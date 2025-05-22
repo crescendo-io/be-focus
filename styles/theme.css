@@ -367,7 +367,14 @@ p {
 }
 
 .white .swiper-pagination-bullet{
-    background: #fff;
+    background: rgba(255,255,255,0.3);
+}
+.white .swiper-pagination-bullet-active{
+    background: #FFF !important;
+}
+
+.white .swiper-button-next:after, .white .swiper-button-prev:after{
+    color: #FFF;    
 }
 
 .container-slider-cards .swiper .card-slide .text img{

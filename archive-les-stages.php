@@ -93,7 +93,7 @@ $query = new WP_Query($args);
 
     <div class="strate marge small" style="background: #F28E65">
     </div>
-    <div class="strate container-text-only center  marge-small" style="background: #F28E65">
+    <div class="strate container-text-only center  marge-small white" style="background: #F28E65">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -103,7 +103,7 @@ $query = new WP_Query($args);
             </div>
         </div>
     </div>
-    <div class="strate container-slider-quotes  marge-small" style="background: #F28E65">
+    <div class="strate container-slider-quotes  marge-small white" style="background: #F28E65">
 
         <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" data-itemsdesk="1" data-itemstablet="1" data-itemsmobile="1">
             <!-- Additional required wrapper -->
