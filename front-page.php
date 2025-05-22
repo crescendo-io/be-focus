@@ -33,7 +33,7 @@ get_header();
         $query = new WP_Query($args);
 
 
-        if($i == 5 && $query->found_posts){ ?>
+        if($i == 2 && $query->found_posts){ ?>
 
             <div class="strate next-sessions">
                 <div class="container">
@@ -47,7 +47,7 @@ get_header();
 
 
                     if ($query->have_posts()) {
-                        $nombre = 1;
+                        $nombre = 4;
                         while ($query->have_posts()) {
 
                             $nombre++;
