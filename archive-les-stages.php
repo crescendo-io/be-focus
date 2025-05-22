@@ -49,12 +49,6 @@ $query = new WP_Query($args);
             ?>
 
             <div class="strate container-image-text" style="background: <?= ($i == 2 || $i == 4) ? "#ffffff" : '#fef8ef'; ?>">
-                <?php if($i == 2): ?>
-                <div class="background-cut bottom" style="background-color: #fef8ef; height: 20%;"></div>
-                <?php endif; ?>
-                <?php if($i == 4): ?>
-                    <div class="background-cut top" style="background-color: #FEF8EF; height: 20%;"></div>
-                <?php endif; ?>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 <?= ($i%2 == 1) ? 'visible-xs' : ''; ?>">
