@@ -222,6 +222,8 @@ $query = new WP_Query($args);
     </div>
     <div class="strate marge small" style="background: #F28E65">
     </div>
+    <div class="strate marge small" style="background: #fef8ef">
+    </div>
 
 
 
