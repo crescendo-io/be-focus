@@ -43,6 +43,8 @@ $(window).on('load',function(){
         $('.modal-contact').fadeOut(300);
         $('.form-resa').fadeIn();
         $('form .success').fadeOut();
+
+        $('form button').removeAttr('disabled');
     });
 
     $('a[href="#contact"]').on('click', function(e) {
@@ -85,7 +87,7 @@ $('#form-booking').submit(function(e){
 
     var form = $(this);
     var formData = form.serialize();
-
+    form.find('button').attr('disabled', true);
     $.ajax({
         url: my_ajax.url, // Cette variable doit être définie côté WordPress (voir plus bas)
         type: 'POST',
@@ -109,7 +111,7 @@ $('#form-contact').submit(function(e){
 
     var form = $(this);
     var formData = form.serialize();
-
+    form.find('button').attr('disabled', true);
     $.ajax({
         url: my_ajax.url, // Cette variable doit être définie côté WordPress (voir plus bas)
         type: 'POST',

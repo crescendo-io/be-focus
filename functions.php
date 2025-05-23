@@ -374,6 +374,7 @@ function traitement_booking_form() {
     $phone = $form_data['phone'];
     $stage_id = $form_data['stage_id'];
     $status = $form_data['status'];
+    $handicap = $form_data['handicap'];
 
     if(get_post($stage_id) && $email && $firstname && $lastname && $city && $phone && $stage_id && $status){
 
@@ -405,6 +406,7 @@ function traitement_booking_form() {
             <tr><td class="label">ID du stage :</td><td>' . esc_html(get_the_title($stage_id)) . '</td></tr>
             <tr><td class="label">Date du stage :</td><td>' . get_field('agenda_date', $stage_id) . '</td></tr>
             <tr><td class="label">Intermittent du spectacle :</td><td>' . (($status == 1) ? 'Oui' : 'Non') . '</td></tr>
+            <tr><td class="label">Situation de handicap :</td><td>' . (($handicap == 1) ? 'Non' : 'Oui') . '</td></tr>
             </table>
         </div>
         </body>

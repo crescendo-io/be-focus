@@ -179,7 +179,6 @@ if(!is_front_page()): ?>
                     <div class="container-fluid form-resa">
                         <div class="row">
                             <div class="col-sm-12">
-
                                 <div class="intro-modal">
                                     <div class="date">12/08/2025 12:15</div>
                                     <div class="title-modal">
@@ -228,6 +227,17 @@ if(!is_front_page()): ?>
                                 <label>
                                     Téléphone *
                                     <input type="tel" name="phone" required placeholder="Votre téléphone">
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="">
+                                    Être vous en situation de handicap ?
+                                    <p style="font-size:10px; font-weight: 400">Si oui, contactez-nous pour que nous puissions organiser ensemble les modalités d'accueil adaptées.</p>
+
+                                    <select name="handicap" id="">
+                                        <option value="1">Non</option>
+                                        <option value="2">Oui</option>
+                                    </select>
                                 </label>
                             </div>
                             <input type="hidden" name="stage_id" class="modal-stage-id">
