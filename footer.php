@@ -180,7 +180,6 @@ if(!is_front_page()): ?>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="intro-modal">
-                                    <div class="date">12/08/2025 12:15</div>
                                     <div class="title-modal">
                                         Inscription
                                     </div>

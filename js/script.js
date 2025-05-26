@@ -26,13 +26,11 @@ $(window).on('load',function(){
     $('.open-modal').click(function(event){
         var el = $(this);
         var stageId = el.data('stage-id');
-        var stageDate = el.data('stage-date');
         var stageName = el.data('stage-name');
 
         event.preventDefault();
         $('.modal-booking').fadeIn(300);
         $('.modal-booking .stage-type').text(stageName);
-        $('.modal-booking .date').text(stageDate);
         $('.modal-booking .modal-stage-id').val(stageId);   
 
     });

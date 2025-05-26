@@ -72,7 +72,7 @@ get_header();
                                             <div class="col-sm-6">
                                                 <div class="container-info-session">
                                                     <div class="title-session"><?= get_the_title(); ?></div>
-                                                    <div class="date-session"><?= get_field('agenda_date'); ?></div>
+
                                                     <div class="intervenent-session">
                                                         <?= get_field('agenda_intervenant'); ?>
                                                         <a href="#" class="button open-modal" data-stage-id="<?= get_the_ID(); ?>" data-stage-date="<?= get_field('agenda_date'); ?>" data-stage-name="<?= get_the_title(); ?>">Réserver le stage</a>

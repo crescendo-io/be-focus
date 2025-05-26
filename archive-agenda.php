@@ -89,7 +89,7 @@ $galerie_query = new WP_Query($args);
                                 <div class="title-event">
                                     <strong><?= get_the_title(); ?></strong>
                                 </div>
-                                <div class="date"><?= get_field('agenda_date'); ?></div>
+                            
                                 <div class="intervenant"><?= get_field('agenda_intervenant'); ?></div>
                                 <a href="<?= get_the_permalink($agenda_type); ?>" class="link">Découvrir le stage</a>
                                 <a href="#" class="button open-modal" data-stage-id="<?= get_the_ID(); ?>" data-stage-date="<?= get_field('agenda_date'); ?>" data-stage-name="<?= get_the_title(); ?>">Réserver le stage</a>
@@ -150,7 +150,7 @@ $galerie_query = new WP_Query($args);
                                 <div class="title-event">
                                     <strong><?= get_the_title(); ?></strong>
                                 </div>
-                                <div class="date"><?= get_field('agenda_date'); ?></div>
+
                                 <div class="intervenant"><?= get_field('agenda_intervenant'); ?></div>
                             </div>
                         </div>
