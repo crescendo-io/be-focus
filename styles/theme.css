@@ -1183,7 +1183,11 @@ input:invalid, textarea:invalid{
 }
 
 .strate-hero.full{
-    height: 90vh;
+    height: 100vh;
+}
+
+.strate-hero.full .strate-hero_inner{
+    transform: translateX(-50%) translateY(calc(-50% + 63px));
 }
 
 .strate-hero.middle{
@@ -1216,8 +1220,8 @@ input:invalid, textarea:invalid{
 
 
 .strate-hero .strate-hero_inner h1{
-    font-size: 7vw;
-    line-height: 6vw;
+    font-size: 5.5vw;
+    line-height: 5vw;
 }
 
 .strate-hero .strate-hero_inner p{

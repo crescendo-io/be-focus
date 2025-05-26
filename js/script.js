@@ -61,7 +61,7 @@ $(window).on('load',function(){
 
 $(window).scroll(function(){
     var scrollValue = $(window).scrollTop();
-    if(scrollValue > 200){
+    if(scrollValue > 10){
         $('.header').addClass('scroll');
     }else{
         $('.header').removeClass('scroll');
