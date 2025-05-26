@@ -129,3 +129,19 @@ $('#form-contact').submit(function(e){
         }
     });
 });
+
+
+function showStrateElementsOnScroll() {
+    $('.strate p, .strate h2, .strate h3, .strate h4, .strate h5, .strate .button').each(function() {
+        var $el = $(this);
+        var windowBottom = $(window).scrollTop() + $(window).height();
+        var elTop = $el.offset().top;
+
+        if (windowBottom > elTop + 30) {
+            $el.addClass('visible');
+        }
+    });
+}
+
+// Au scroll et au chargement
+$(window).on('scroll load', showStrateElementsOnScroll);
