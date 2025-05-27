@@ -345,18 +345,23 @@ add_image_size( 'crosslink', 900, 900, true );
 
 
 use PHPMailer\PHPMailer\PHPMailer;
+
 add_action('phpmailer_init', 'custom_mailjet_smtp');
+
 function custom_mailjet_smtp(PHPMailer $phpmailer) {
     $phpmailer->isSMTP();
     $phpmailer->Host       = 'in-v3.mailjet.com';
     $phpmailer->SMTPAuth   = true;
     $phpmailer->Port       = 587;
-    $phpmailer->Username   = '456ba360d83bb9ec9e665743728ebd34';    // Remplacez par votre clé API
-    $phpmailer->Password   = '6e18ab8a5a34801fe3ef527ecc7541f5';  // Remplacez par votre secret
+    $phpmailer->Username   = '456ba360d83bb9ec9e665743728ebd34';    // Clé API Mailjet
+    $phpmailer->Password   = '6e18ab8a5a34801fe3ef527ecc7541f5';    // Secret Mailjet
     $phpmailer->SMTPSecure = 'tls';
-    $phpmailer->From       = 'infos@crescendo-studio.io';
-    $phpmailer->FromName   = 'Be Focus';
-
+    $phpmailer->setFrom('contact@befocus.fr', 'Be Focus');  // ← plus sûr
+    $phpmailer->CharSet    = 'UTF-8';
+    $phpmailer->Encoding   = 'base64';
+    // Debug optionnel :
+    // $phpmailer->SMTPDebug = 2;
+    // $phpmailer->Debugoutput = 'error_log';
 }
 
 
