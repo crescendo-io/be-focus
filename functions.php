@@ -347,48 +347,39 @@ function send_mailjet_email($to_email, $to_name, $subject, $html_content) {
     $api_key = '456ba360d83bb9ec9e665743728ebd34';
     $api_secret = '6e18ab8a5a34801fe3ef527ecc7541f5';
 
-    $url = "https://api.mailjet.com/v3.1/send";
-
-    $message = [
+    $postdata = json_encode([
         'Messages' => [[
-            'From' => [
-                'Email' => "contact@befocus.fr",
-                'Name'  => "Be Focus"
-            ],
-            'To' => [[
-                'Email' => $to_email,
-                'Name'  => $to_name
-            ]],
-            'Subject'  => $subject,
-            'HTMLPart' => $html_content,
-            'CustomID' => "BeFocusContact"
+            'From' => ['Email' => "contact@befocus.fr", 'Name' => "Be Focus"],
+            'To'   => [['Email' => $to_email, 'Name' => $to_name]],
+            'Subject' => $subject,
+            'HTMLPart' => $html_content
         ]]
-    ];
-
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-        CURLOPT_URL            => $url,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POST           => true,
-        CURLOPT_POSTFIELDS     => json_encode($message),
-        CURLOPT_HTTPHEADER     => [
-            'Content-Type: application/json'
-        ],
-        CURLOPT_USERPWD        => "$api_key:$api_secret"
     ]);
 
-    $response = curl_exec($curl);
-    $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-    curl_close($curl);
+    $options = [
+        'http' => [
+            'method'  => 'POST',
+            'header'  => [
+                "Content-Type: application/json",
+                "Authorization: Basic " . base64_encode("$api_key:$api_secret")
+            ],
+            'content' => $postdata,
+            'timeout' => 10
+        ]
+    ];
 
-    if ($http_code === 200) {
-        error_log("Mailjet API success: " . $response);
-        return true;
-    } else {
-        error_log("❌ Mailjet API error: " . $response);
+    $context = stream_context_create($options);
+    $result = @file_get_contents("https://api.mailjet.com/v3.1/send", false, $context);
+
+    if ($result === false) {
+        error_log("❌ file_get_contents Mailjet échoué");
         return false;
     }
+
+    error_log("✅ Mailjet via fopen: " . $result);
+    return true;
 }
+
 
 
 
@@ -398,7 +389,7 @@ add_action('wp_ajax_nopriv_booking_form_submit', 'traitement_booking_form');
 
 function traitement_booking_form() {
     parse_str($_POST['form_data'], $form_data);
-    
+
 
     $email = $form_data['email'];
     $firstname = $form_data['firstname'];
