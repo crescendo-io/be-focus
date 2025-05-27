@@ -382,6 +382,7 @@ function send_mailjet_email($to_email, $to_name, $subject, $html_content) {
     curl_close($curl);
 
     if ($http_code === 200) {
+        error_log("Mailjet API success: " . $response);
         return true;
     } else {
         error_log("❌ Mailjet API error: " . $response);
