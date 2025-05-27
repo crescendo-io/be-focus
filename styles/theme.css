@@ -1765,15 +1765,15 @@ input:invalid, textarea:invalid{
 
 
 .cky-btn-accept{
-    background: #0E445F !important;
-    border-color: #0E445F !important;
+    background: #FF435A !important;
+    border-color: #FF435A !important;
 }
 
 .cky-btn-reject,
 .cky-btn-customize,
 .cky-btn-preferences{
-    color: #0E445F !important;
-    border-color: #0E445F !important;
+    color: #FF435A !important;
+    border-color: #FF435A !important;
 }
 
 .cky-btn-revisit-wrapper{
