@@ -378,10 +378,8 @@ function traitement_booking_form() {
 
     if(get_post($stage_id) && $email && $firstname && $lastname && $city && $phone && $stage_id && $status){
 
-        $to = array(
-            'crescendo.studio.io@gmail.com',
-            'contact@befocus.fr'
-        );
+        $to = 'bryanvidal01@gmail.com';
+
         $subject = 'Réservation de stage';
         $message = '
         <html>
@@ -439,10 +437,7 @@ function traitement_contact_form() {
 
     if($email && $firstname && $lastname && $message && $phone && $status){
 
-        $to = array(
-            'crescendo.studio.io@gmail.com',
-            'contact@befocus.fr'
-        );
+        $to = 'bryanvidal01@gmail.com';
         $subject = 'Demande de contact';
         $message = '
         <html>
