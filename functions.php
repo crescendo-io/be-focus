@@ -343,26 +343,52 @@ add_image_size( 'relsize', 1920, 1080, true );
 add_image_size( 'crosslink', 900, 900, true );
 
 
+function send_mailjet_email($to_email, $to_name, $subject, $html_content) {
+    $api_key = '456ba360d83bb9ec9e665743728ebd34';
+    $api_secret = '6e18ab8a5a34801fe3ef527ecc7541f5';
 
-use PHPMailer\PHPMailer\PHPMailer;
+    $url = "https://api.mailjet.com/v3.1/send";
 
-add_action('phpmailer_init', 'custom_mailjet_smtp');
+    $message = [
+        'Messages' => [[
+            'From' => [
+                'Email' => "contact@befocus.fr",
+                'Name'  => "Be Focus"
+            ],
+            'To' => [[
+                'Email' => $to_email,
+                'Name'  => $to_name
+            ]],
+            'Subject'  => $subject,
+            'HTMLPart' => $html_content,
+            'CustomID' => "BeFocusContact"
+        ]]
+    ];
 
-function custom_mailjet_smtp(PHPMailer $phpmailer) {
-    $phpmailer->isSMTP();
-    $phpmailer->Host       = 'in-v3.mailjet.com';
-    $phpmailer->SMTPAuth   = true;
-    $phpmailer->Port       = 587;
-    $phpmailer->Username   = '456ba360d83bb9ec9e665743728ebd34';    // Clé API Mailjet
-    $phpmailer->Password   = '6e18ab8a5a34801fe3ef527ecc7541f5';    // Secret Mailjet
-    $phpmailer->SMTPSecure = 'tls';
-    $phpmailer->setFrom('contact@befocus.fr', 'Be Focus');  // ← plus sûr
-    $phpmailer->CharSet    = 'UTF-8';
-    $phpmailer->Encoding   = 'base64';
-    // Debug optionnel :
-    // $phpmailer->SMTPDebug = 2;
-    // $phpmailer->Debugoutput = 'error_log';
+    $curl = curl_init();
+    curl_setopt_array($curl, [
+        CURLOPT_URL            => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => json_encode($message),
+        CURLOPT_HTTPHEADER     => [
+            'Content-Type: application/json'
+        ],
+        CURLOPT_USERPWD        => "$api_key:$api_secret"
+    ]);
+
+    $response = curl_exec($curl);
+    $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    curl_close($curl);
+
+    if ($http_code === 200) {
+        return true;
+    } else {
+        error_log("❌ Mailjet API error: " . $response);
+        return false;
+    }
 }
+
 
 
 // Traitement de la requête AJAX
@@ -420,7 +446,7 @@ function traitement_booking_form() {
         </html>';
         $headers = array('Content-Type: text/html; charset=UTF-8');
 
-        wp_mail($to, $subject, $message, $headers);
+        send_mailjet_email($to, 'Bryan Vidal', $subject, $message);
         wp_send_json_success('Réservation reçue !');
     }
 
@@ -475,7 +501,7 @@ function traitement_contact_form() {
         </html>';
         $headers = array('Content-Type: text/html; charset=UTF-8');
 
-        wp_mail($to, $subject, $message, $headers);
+        send_mailjet_email($to, 'Bryan Vidal', $subject, $message);
         wp_send_json_success('Message envoyé !');
     }
 
