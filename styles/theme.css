@@ -786,6 +786,7 @@ footer {
     background: #FFF;
     position: absolute;
     width: 100%;
+    overflow: auto;
     max-width: 1200px;
     height: 100%;
     right: 0;
