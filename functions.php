@@ -354,7 +354,7 @@ function custom_mailjet_smtp(PHPMailer $phpmailer) {
     $phpmailer->Username   = '456ba360d83bb9ec9e665743728ebd34';    // Remplacez par votre clé API
     $phpmailer->Password   = '6e18ab8a5a34801fe3ef527ecc7541f5';  // Remplacez par votre secret
     $phpmailer->SMTPSecure = 'tls';
-    $phpmailer->From       = 'infos@crescendo-studio.io';
+    $phpmailer->From       = 'contact@befocus.fr';
     $phpmailer->FromName   = 'Be Focus';
 }
 
@@ -378,7 +378,10 @@ function traitement_booking_form() {
 
     if(get_post($stage_id) && $email && $firstname && $lastname && $city && $phone && $stage_id && $status){
 
-        $to = 'bryanvidal01@gmail.com';
+        $to = array(
+            'crescendo.studio.io@gmail.com',
+            'contact@befocus.fr'
+        );
         $subject = 'Réservation de stage';
         $message = '
         <html>
@@ -436,7 +439,10 @@ function traitement_contact_form() {
 
     if($email && $firstname && $lastname && $message && $phone && $status){
 
-        $to = 'bryanvidal01@gmail.com';
+        $to = array(
+            'crescendo.studio.io@gmail.com',
+            'contact@befocus.fr'
+        );
         $subject = 'Demande de contact';
         $message = '
         <html>
