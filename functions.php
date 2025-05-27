@@ -356,6 +356,7 @@ function custom_mailjet_smtp(PHPMailer $phpmailer) {
     $phpmailer->SMTPSecure = 'tls';
     $phpmailer->From       = 'infos@crescendo-studio.io';
     $phpmailer->FromName   = 'Be Focus';
+    
 }
 
 
