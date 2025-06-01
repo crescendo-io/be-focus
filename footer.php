@@ -342,7 +342,7 @@ if(!is_front_page()): ?>
                 </div>
                 <div class="col-sm-4">
                     <?php if(is_front_page() || get_the_ID() == 406): ?>
-                    <img src="<?= get_stylesheet_directory_uri(); ?>/styles/img/qualiopi.png" alt="">
+                    <img src="<?= get_stylesheet_directory_uri(); ?>/styles/img/qualiopi-2.png" alt="">
                     <?php endif; ?>
                 </div>
                 <div class="col-sm-4">
