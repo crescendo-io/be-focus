@@ -341,7 +341,9 @@ if(!is_front_page()): ?>
                     <img src="<?= get_stylesheet_directory_uri(); ?>/styles/img/afdas.png" alt="">
                 </div>
                 <div class="col-sm-4">
+                    <?php if(is_front_page() || get_the_ID() == 406): ?>
                     <img src="<?= get_stylesheet_directory_uri(); ?>/styles/img/qualiopi.png" alt="">
+                    <?php endif; ?>
                 </div>
                 <div class="col-sm-4">
                     <img src="<?= get_stylesheet_directory_uri(); ?>/styles/img/francetravail.png" alt="">
