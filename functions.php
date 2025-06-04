@@ -402,7 +402,7 @@ function traitement_booking_form() {
 
     if(get_post($stage_id) && $email && $firstname && $lastname && $city && $phone && $stage_id && $status){
 
-        $to = 'bryanvidal01@gmail.com';
+        $to = array('bryanvidal01@gmail.com', 's.qassar@mailistec.fr');
 
         $subject = 'Réservation de stage';
         $message = '
@@ -438,7 +438,8 @@ function traitement_booking_form() {
         </html>';
         $headers = array('Content-Type: text/html; charset=UTF-8');
 
-        send_mailjet_email($to, 'Bryan Vidal', $subject, $message);
+        $headers = ['From: Be Focus <contact@befocus.fr>', 'Content-Type: text/html; charset=UTF-8'];
+        wp_mail($to, $subject, $message, $headers);
         wp_send_json_success('Réservation reçue !');
     }
 
@@ -461,7 +462,7 @@ function traitement_contact_form() {
 
     if($email && $firstname && $lastname && $message && $phone && $status){
 
-        $to = 'bryanvidal01@gmail.com';
+        $to = array('bryanvidal01@gmail.com', 's.qassar@mailistec.fr');
         $subject = 'Demande de contact';
         $message = '
         <html>
@@ -493,7 +494,8 @@ function traitement_contact_form() {
         </html>';
         $headers = array('Content-Type: text/html; charset=UTF-8');
 
-        send_mailjet_email($to, 'Bryan Vidal', $subject, $message);
+        $headers = ['From: Be Focus <contact@befocus.fr>', 'Content-Type: text/html; charset=UTF-8'];
+        wp_mail($to, $subject, $message, $headers);
         wp_send_json_success('Message envoyé !');
     }
 
