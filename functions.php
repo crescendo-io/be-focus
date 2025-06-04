@@ -402,7 +402,7 @@ function traitement_booking_form() {
 
     if(get_post($stage_id) && $email && $firstname && $lastname && $city && $phone && $stage_id && $status){
 
-        $to = array('bryanvidal01@gmail.com', 's.qassar@mailistec.fr');
+        $to = array('bryanvidal01@gmail.com', 'contact@befocus.fr');
 
         $subject = 'Réservation de stage';
         $message = '
@@ -462,7 +462,7 @@ function traitement_contact_form() {
 
     if($email && $firstname && $lastname && $message && $phone && $status){
 
-        $to = array('bryanvidal01@gmail.com', 's.qassar@mailistec.fr');
+        $to = array('bryanvidal01@gmail.com', 'contact@befocus.fr');
         $subject = 'Demande de contact';
         $message = '
         <html>
