@@ -29,6 +29,14 @@ $(window).on('load',function(){
         var stageName = el.data('stage-name');
 
         event.preventDefault();
+        
+        // Ajouter le paramètre dans l'URL sans recharger la page
+        if (stageId) {
+            var url = new URL(window.location);
+            url.searchParams.set('stage-id', stageId);
+            window.history.pushState({}, '', url);
+        }
+        
         $('.modal-booking').fadeIn(300);
         $('.modal-booking .stage-type').text(stageName);
         $('.modal-booking .modal-stage-id').val(stageId);   
@@ -37,6 +45,12 @@ $(window).on('load',function(){
 
     $('.cross-modal').click(function(event){
         event.preventDefault();
+        
+        // Supprimer le paramètre de l'URL
+        var url = new URL(window.location);
+        url.searchParams.delete('stage-id');
+        window.history.pushState({}, '', url);
+        
         $('.modal-booking').fadeOut(300);
         $('.modal-contact').fadeOut(300);
         $('.form-resa').fadeIn();
@@ -53,6 +67,23 @@ $(window).on('load',function(){
 
     });
     
+    // Vérifier si un paramètre stage-id est présent au chargement de la page
+    var urlParams = new URLSearchParams(window.location.search);
+    var stageIdFromUrl = urlParams.get('stage-id');
+    
+    if (stageIdFromUrl) {
+        // Trouver le bouton correspondant pour récupérer le nom du stage
+        var correspondingButton = $('.open-modal[data-stage-id="' + stageIdFromUrl + '"]');
+        
+        if (correspondingButton.length) {
+            var stageName = correspondingButton.data('stage-name');
+            
+            // Ouvrir la modale avec les informations
+            $('.modal-booking').fadeIn(300);
+            $('.modal-booking .stage-type').text(stageName);
+            $('.modal-booking .modal-stage-id').val(stageIdFromUrl);
+        }
+    }
 
 });
 
