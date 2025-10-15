@@ -17,6 +17,7 @@ body{
     color: #222;
     font-family: "Fustat", sans-serif;
     background: #fff;
+    zoom: .9;
 }
 
 .strate{
@@ -482,6 +483,22 @@ header.burger .logo{
     transform: translateX(-50%);
 }
 
+.instagram-btn{
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    position: relative;
+    display: inline-block;
+    margin-left: 30px
+}
+.instagram-btn svg{
+    width: 30px;
+}
+
+.instagram-btn svg path{
+    fill: #FFF;
+}
 
 .strate-hero h4{
     font-size: 16px;
@@ -2080,6 +2097,13 @@ svg .svg-elem-1{fill:transparent;transition:fill 0.3s ease-in-out 0s}svg.active 
     header.burger .logo{
         width: 100px;
         margin-top: 0;
+    }
+
+    .instagram-btn{
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        transform: translateY(0);
     }
 
 

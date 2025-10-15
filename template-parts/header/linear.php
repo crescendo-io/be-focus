@@ -14,7 +14,7 @@
                 <ul class="main-menu">
                     <li class="<?= (is_post_type_archive('les-stages') || is_singular('les-stages')) ? 'active':'';?>">
                         <a href="<?= get_site_url(); ?>/les-stages/">
-                            Nos programmes
+                            Nos formations
                         </a>
                     </li>
                     <li class="<?= (get_the_id() == '406') ? 'active' : ''; ?>">
@@ -44,6 +44,13 @@
             </div>
             <div class="col-sm-5 text-right">
                 <a href="<?= get_site_url(); ?>/agenda/" class="button">Je reserve mon stage</a>
+                <?php if(get_field('option_instagram','option')): ?>
+
+                        <a href="<?= get_field('option_instagram', 'option'); ?>" class="instagram-btn" rel="nofollow" target="_blank">
+                            <?= get_template_part('template-parts/icons/icon-instagram'); ?>
+                        </a>
+
+                <?php endif; ?>
             </div>
         </div>
     </div>
