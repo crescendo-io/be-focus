@@ -33,13 +33,13 @@ get_header();
         $query = new WP_Query($args);
 
 
-        if($i == 2 && $query->found_posts){ ?>
+        if($i == 1 && $query->found_posts){ ?>
 
             <div class="strate next-sessions">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center white">
-                            <h2><strong>Nos prochaines</strong> <br/>sessions</h2>
+                            <h2><strong>Nos prochains</strong> <br/>stages</h2>
                         </div>
                     </div>
 
@@ -75,8 +75,8 @@ get_header();
 
                                                     <div class="intervenent-session">
                                                         <?= get_field('agenda_intervenant'); ?>
-                                                        <a href="#" class="button open-modal" data-stage-id="<?= get_the_ID(); ?>" data-stage-date="<?= get_field('agenda_date'); ?>" data-stage-name="<?= get_the_title(); ?>">Réserver le stage</a>
-                                                        <a href="<?= get_the_permalink($agenda_type); ?>" class="button secondary">Découvrir le stage</a>
+                                                        <a href="#" class="button open-modal" data-stage-id="<?= get_the_ID(); ?>" data-stage-date="<?= get_field('agenda_date'); ?>" data-stage-name="<?= get_the_title(); ?>">S'inscrire</a>
+                                                        <a href="<?= get_the_permalink($agenda_type); ?>" class="button secondary">En savoir plus</a>
                                                     </div>
                                                 </div>
                                             </div>

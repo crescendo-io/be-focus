@@ -19,7 +19,7 @@ $query = new WP_Query($args);
     <div class="strate-hero middle dark " style="color: #ffffff; background: ">
         <img src="<?= get_site_url(); ?>/wp-content/uploads/2025/05/image-1137.png" class="strate-hero_image" alt="" width="3456" height="1930">
         <div class="strate-hero_inner">
-            <h1><em><strong>Nos </strong></em>stages</h1>
+            <h1><em><strong>Nos </strong></em>formations</h1>
             <p>&nbsp;</p>
         </div>
     </div>
@@ -29,8 +29,8 @@ $query = new WP_Query($args);
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 mx-auto">
-                    <h2><strong>Découvrez</strong> le stage<br/>
-                        fait pour vous</h2>
+                    <h2><strong>Découvrez</strong> nos<br/>
+                        programmes</h2>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@ $query = new WP_Query($args);
                                 <?= $stage_short_desc; ?>
                                 <div class="container-buttons">
                                     <a href="<?= get_the_permalink(); ?>" target="" class="button primary ">
-                                        Découvrir le stage
+                                        En savoir plus
                                     </a>
                                 </div>
 
@@ -108,25 +108,6 @@ $query = new WP_Query($args);
         <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" data-itemsdesk="1" data-itemstablet="1" data-itemsmobile="1">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper" id="swiper-wrapper-f1e7cf7d859110e14" aria-live="polite">
-
-
-                <div class="swiper-slide swiper-slide-active" style="width: 2130px;" role="group" aria-label="1 / 6" data-swiper-slide-index="0">
-                    <div class="citation">
-                        <div class="text">
-                            <p>Stage différent des autres, très bon climat de confiance et de bienveillance.</p>
-                        </div>
-
-                        <div class="image-author">
-                            <img src="" alt="" loading="lazy">
-                        </div>
-                        <div class="author-infos">
-                            <div class="name">Emma Julien</div>
-                            <div class="post">Comédienne</div>
-                        </div>
-
-                    </div>
-                </div>
-
                 <div class="swiper-slide swiper-slide-next" style="width: 2130px;" role="group" aria-label="2 / 6" data-swiper-slide-index="1">
                     <div class="citation">
                         <div class="text">
