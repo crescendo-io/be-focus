@@ -500,3 +500,118 @@ function traitement_contact_form() {
     }
 
 }
+
+// Ajouter le bouton "Formats" dans la barre d'outils TinyMCE
+function befocus_add_styleselect_button($buttons) {
+    // Ajouter le bouton styleselect au début de la deuxième ligne
+    array_unshift($buttons, 'styleselect');
+    return $buttons;
+}
+add_filter('mce_buttons_2', 'befocus_add_styleselect_button');
+
+// Ajouter des sélecteurs personnalisés dans les éditeurs WYSIWYG
+function befocus_add_custom_tinymce_styles($settings) {
+    // Ajouter les formats personnalisés
+    $style_formats = array(
+        array(
+            'title' => 'Typographies',
+            'items' => array(
+                array(
+                    'title' => 'Fustat',
+                    'inline' => 'span',
+                    'classes' => 'font-fustat',
+                    'wrapper' => false
+                ),
+                array(
+                    'title' => 'Playfair',
+                    'inline' => 'span',
+                    'classes' => 'font-playfair',
+                    'wrapper' => false
+                )
+            )
+        ),
+        array(
+            'title' => 'Graisses',
+            'items' => array(
+                array(
+                    'title' => 'Regular (400)',
+                    'inline' => 'span',
+                    'classes' => 'font-weight-400',
+                    'wrapper' => false
+                ),
+                array(
+                    'title' => 'Medium (500)',
+                    'inline' => 'span',
+                    'classes' => 'font-weight-500',
+                    'wrapper' => false
+                ),
+                array(
+                    'title' => 'Semi-Bold (600)',
+                    'inline' => 'span',
+                    'classes' => 'font-weight-600',
+                    'wrapper' => false
+                ),
+                array(
+                    'title' => 'Extra-Bold (800)',
+                    'inline' => 'span',
+                    'classes' => 'font-weight-800',
+                    'wrapper' => false
+                ),
+                array(
+                    'title' => 'Black (900)',
+                    'inline' => 'span',
+                    'classes' => 'font-weight-900',
+                    'wrapper' => false
+                )
+            )
+        )
+    );
+
+    // Encoder en JSON et l'ajouter aux paramètres TinyMCE
+    $settings['style_formats'] = json_encode($style_formats);
+    
+    // Activer les formats de style dans la barre d'outils
+    $settings['style_formats_merge'] = false;
+    
+    return $settings;
+}
+add_filter('tiny_mce_before_init', 'befocus_add_custom_tinymce_styles');
+
+// Ajouter les classes CSS correspondantes dans l'éditeur
+function befocus_add_editor_styles() {
+    add_editor_style('styles/editor-styles.css');
+}
+add_action('after_setup_theme', 'befocus_add_editor_styles');
+
+// Fonction pour ajouter les styles en ligne si pas de fichier séparé
+function befocus_add_tinymce_inline_styles() {
+    ?>
+    <style>
+        /* Typographies */
+        .mce-content-body .font-fustat {
+            font-family: 'Fustat', sans-serif !important;
+        }
+        .mce-content-body .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+        
+        /* Graisses */
+        .mce-content-body .font-weight-400 {
+            font-weight: 400 !important;
+        }
+        .mce-content-body .font-weight-500 {
+            font-weight: 500 !important;
+        }
+        .mce-content-body .font-weight-600 {
+            font-weight: 600 !important;
+        }
+        .mce-content-body .font-weight-800 {
+            font-weight: 800 !important;
+        }
+        .mce-content-body .font-weight-900 {
+            font-weight: 900 !important;
+        }
+    </style>
+    <?php
+}
+add_action('admin_head', 'befocus_add_tinymce_inline_styles');

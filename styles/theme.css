@@ -9,6 +9,43 @@ header.burger .button-menu,
     font-family: "Fustat", sans-serif;
 }
 
+/* Classes personnalisées pour les typographies et graisses (WYSIWYG) */
+.font-fustat {
+    font-family: 'Fustat', sans-serif !important;
+}
+
+.font-fustat strong{
+    font-family: 'Fustat', sans-serif !important;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif !important;
+}
+
+.font-playfair strong{
+    font-family: 'Playfair Display', serif !important;
+}
+
+.font-weight-400 {
+    font-weight: 400 !important;
+}
+
+.font-weight-500 {
+    font-weight: 500 !important;
+}
+
+.font-weight-600 {
+    font-weight: 600 !important;
+}
+
+.font-weight-800 {
+    font-weight: 800 !important;
+}
+
+.font-weight-900 {
+    font-weight: 900 !important;
+}
+
 h1, h2, h3, h4, h5{
     letter-spacing: -.05em;
 }
