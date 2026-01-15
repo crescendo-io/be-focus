@@ -29,7 +29,7 @@ $query = new WP_Query($args);
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 mx-auto">
-                    <h2><strong>Découvrez</strong> le formation<br/>
+                    <h2><strong>Découvrez</strong> la formation<br/>
                         faite pour vous</h2>
                 </div>
             </div>
